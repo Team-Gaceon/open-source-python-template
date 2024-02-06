@@ -1,0 +1,51 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    machine: true # This tells CircleCI to use a VM instead of a Docker container
+    steps:
+      - checkout
+
+      # Install PDM (Python Dependency Manager)
+      - run:
+          name: Install PDM
+          command: |
+            curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
+
+      # Cache dependencies to speed up subsequent builds
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "pdm.lock" }}
+
+      # Install project dependencies
+      - run:
+          name: Install Dependencies
+          command: pdm install
+
+      # Save dependency cache
+      - save_cache:
+          paths:
+            - ~/.pdm
+          key: v1-dependencies-{{ checksum "pdm.lock" }}
+
+      # Static analysis with mypy
+      - run:
+          name: Static Analysis with Mypy
+          command: pdm run mypy src/
+
+      # Linting with ruff
+      - run:
+          name: Linting with Ruff
+          command: pdm run ruff src/ tests/
+
+      # Run unit tests with pytest
+      - run:
+          name: Run Unit Tests with Pytest
+          command: pdm run pytest
+
+# Define your workflow
+workflows:
+  version: 2
+  build-and-test-workflow:
+    jobs:
+      - build-and-test
