@@ -1,5 +1,13 @@
 # Open Source Python Template
-An advanced template for designing and developing Python projects with CI/CD.
+This is an advanced template for designing and developing Python projects with CI/CD. This tempalte serves as a foundation and includes features for build management, unit testing, continuous integration, static analysis, code style adherence, and component specification. 
+
+The details of this template are listed below: 
+The programming language: Python
+Testing Framework: Pytest
+Continuous Integration Solution: CircleCI
+Static Analysis Tools: Ruff, Flake8, MyPy
+Code Formatting Solution: TBD 
+Package/Dependency Manager: PDM (Python Dependency Management)
 
 ## Initial Setup
 Install PDM as package and dependency manager:
