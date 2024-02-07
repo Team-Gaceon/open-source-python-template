@@ -11,6 +11,14 @@ jobs:
           command: |
             curl -sSL https://raw.githubusercontent.com/pdm-project/pdm/main/install-pdm.py | python3 -
             echo 'export PATH="$HOME/.local/bin:$PATH"' >> $BASH_ENV
+            source $BASH_ENV
+
+      - run:
+          name: Debugging PATH and PDM installation
+          command: |
+            echo "Current PATH: $PATH"
+            which pdm || echo "pdm not found in PATH"
+            pdm --version || echo "pdm command not executable"
 
       - restore_cache:
           keys:
@@ -28,16 +36,28 @@ jobs:
           key: v1-dependencies-{{ checksum "pdm.lock" }}
 
       - run:
+          name: Check Code Formatting with Black
+          command: |
+            source $BASH_ENV
+            pdm run black --check src/ tests/
+
+      - run:
           name: Static Analysis with Mypy
-          command: pdm run mypy src/
+          command: |
+            source $BASH_ENV
+            pdm run mypy src/
 
       - run:
           name: Linting with Ruff
-          command: pdm run ruff src/ tests/
+          command: |
+            source $BASH_ENV
+            pdm run ruff src/ tests/
 
       - run:
           name: Run Unit Tests with Pytest
-          command: pdm run pytest
+          command: |
+            source $BASH_ENV
+            pdm run pytest
 
 workflows:
   version: 2
