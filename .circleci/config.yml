@@ -35,6 +35,13 @@ jobs:
           name: Linting with Ruff
           command: pdm run ruff src/ tests/
 
+
+      # Code formatting check with black
+      - run:
+          name: Check Code Formatting with Black
+          command: pdm run black --check src/ tests/
+
+      # Run unit tests with pytest
       - run:
           name: Run Unit Tests with Pytest
           command: pdm run pytest
