@@ -3,11 +3,17 @@
 This is an advanced template for designing and developing Python projects with CI/CD. This template serves as a foundation and includes features for build management, unit testing, continuous integration, static analysis, code style adherence, and component specification.
 
 The details of this template are listed below:
+
 The programming language: Python
+
 Testing Framework: Pytest
+
 Continuous Integration Solution: CircleCI
+
 Static Analysis Tools: Ruff, Flake8, MyPy
-Code Formatting Solution: TBD
+
+Code Formatting Solution: Black
+
 Package/Dependency Manager: PDM (Python Dependency Management)
 
 ## Initial Setup
