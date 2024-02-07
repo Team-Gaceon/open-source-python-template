@@ -53,7 +53,6 @@ jobs:
             source $BASH_ENV
             pdm run ruff src/ tests/
 
-
       # Code formatting check with black
       - run:
           name: Check Code Formatting with Black
