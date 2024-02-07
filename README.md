@@ -1,5 +1,5 @@
 # Open Source Python Template
-This is an advanced template for designing and developing Python projects with CI/CD. This tempalte serves as a foundation and includes features for build management, unit testing, continuous integration, static analysis, code style adherence, and component specification. 
+This is an advanced template for designing and developing Python projects with CI/CD. This template serves as a foundation and includes features for build management, unit testing, continuous integration, static analysis, code style adherence, and component specification. 
 
 The details of this template are listed below: 
 The programming language: Python
@@ -14,7 +14,7 @@ Install PDM as package and dependency manager:
 
     pip install pdm
 
-Install initial dependencie:
+Install initial dependencies:
 
     pdm install --dev
 To update dependencies, run the following:
