@@ -4,17 +4,17 @@ This is an advanced template for designing and developing Python projects with C
 
 The details of this template are listed below:
 
-The programming language: Python
+- The programming language: Python
 
-Testing Framework: Pytest
+- Testing Framework: Pytest
 
-Continuous Integration Solution: CircleCI
+- Continuous Integration Solution: GitHub Actions, CircleCI
 
-Static Analysis Tools: Ruff, Flake8, MyPy
+- Static Analysis Tools: Ruff, Flake8, MyPy
 
-Code Formatting Solution: Black
+- Code Formatting Solution: Black
 
-Package/Dependency Manager: PDM (Python Dependency Management)
+- Package/Dependency Manager: PDM (Python Dependency Management)
 
 ## Initial Setup
 
@@ -48,9 +48,16 @@ To run the application, run the following:
 
     pdm run src/main.py
 
+## Continuous Integration with GitHub Actions
+This project is configured to use GitHub Actions for continuous integration. Every push to the repository triggers automated tests and checks to ensure code quality and functionality.
+
+To see the status of your build, navigate to the main page of the repository. Go to Actions, and in the left sidebar, click the workflow you want to display. From the list of workflow runs, click the name of the run you want to see. There, you can view the logs that shows you how each of the steps was processed.
+
+If you need to customize the build process, modify the `.github/workflows/github-actions.yml` file according to your needs. For detailed instructions, refer to the [GitHub Actions Documentation](https://docs.github.com/en/actions).
+
 ## Continuous Integration with CircleCI
 
-This project is configured to use CircleCI for continuous integration. Every push to the repository triggers automated tests and checks to ensure code quality and functionality.
+As an alternative, this project is also configured to use CircleCI for continuous integration. 
 
 To see the status of your build, visit the CircleCI dashboard. There, you can view the progress and results of the build tests, static analysis, and more for your latest commits.
 
