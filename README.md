@@ -56,7 +56,7 @@ To see the status of your build, visit the CircleCI dashboard. There, you can vi
 
 If you need to customize the build process, modify the `.circleci/config.yml` file according to your needs. For detailed instructions, refer to the [CircleCI Configuration Reference](https://circleci.com/docs/2.0/configuration-reference/).
 
-## Contributors - Team Glaceon
+## Contributors - Team Glaceon 
 
 - Yifei Zhuang
 - Fan Yang
