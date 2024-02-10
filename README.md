@@ -47,6 +47,18 @@ To use pytest, run the following:
 To run the application, run the following:
 
     pdm run src/main.py
+    
+## Component Path
+
+For now, we're focusing on two components: the test and the function itself.
+
+To access the functional component, you can go to src folder.
+
+    cd src
+
+To access the functional component, you can go to tests folder.
+
+    cd tests
 
 ## Continuous Integration with GitHub Actions
 This project is configured to use GitHub Actions for continuous integration. Every push to the repository triggers automated tests and checks to ensure code quality and functionality.
