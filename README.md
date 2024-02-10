@@ -52,11 +52,11 @@ To run the application, run the following:
 
 For now, we're focusing on two components: the test and the function itself.
 
-To access the functional component, you can go to src folder.
+To develop or maintain features, navigate to the /src directory.
 
     cd src
 
-To access the functional component, you can go to tests folder.
+To add or modify test component, navigate to the /tests directory.
 
     cd tests
 
